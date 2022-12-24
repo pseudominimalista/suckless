@@ -1,0 +1,28 @@
+void
+draw(GList *first, struct matrix *_matrix, struct winsize *terminal_dimensions)
+{
+	int i;
+
+	GList **current;
+
+	current = &first;
+	printf("Starting function\n");
+
+	while (*current != NULL){
+		if (( (drop*)( (*current)->data) )->position_y < 
+		    terminal_dimensions->ws_row ){
+		    	_matrix->
+			rows [( (drop*)( (*current)->data))->position_y].
+			cells[( (drop*)( (*current)->data))->position_x] =
+			      ( (drop*)( (*current)->data))->value;
+		}
+		
+		current = & ( (*current)->next);
+	}
+
+        for (i=0; i<terminal_dimensions->ws_row;i++){
+		printf("%s\n", _matrix->rows[i].cells);
+        }
+        return;
+}
+

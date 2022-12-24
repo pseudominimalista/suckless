@@ -1,0 +1,74 @@
+void
+draw((slist **first, struct matrix *_matrix, struct winsize *terminal_dimensions)
+{
+	int i;
+
+	GList **current, **intermediate;// = malloc(sizeof(GList));
+
+	//*current = g_list_append(*current, NULL);
+
+	*current = first;
+	//(*current)->next = first;
+
+	printf("Starting function\n");
+
+	while ( (*current) != NULL){
+		*intermediate = (*current)->next;
+		printf("Entering one\n");
+		if (( (drop*)((*current))->data)->position_y >=
+		    terminal_dimensions->ws_row +
+		    ( (drop*)((*current))->data)->length){
+		    
+
+			//Delete the fucking GList!!!
+			//printf("Current next: %c\n",
+			//	( (drop*)(*current)->next->data )->value);
+			//*current = g_list_delete_link(*current, (*current) );
+			//printf("New next: %c\n",
+			//	( (drop*)(*current)->next->data )->value);
+			printf("Entering three\n");
+			g_list_delete_link(*current, *current);
+			printf("Current:   %p\n", *current);
+			(*current)->next = *intermediate;
+			printf("To delete: %p\n", *intermediate);
+			(*intermediate)->prev = *current;
+			printf("Next:      %p\n", (*current)->next);
+		} else {
+			printf("Entering four\n");
+			if (( (drop*)( (*current)->data) )->position_y < 
+		    	    terminal_dimensions->ws_row ){
+		    		printf("Four cont\n");
+				_matrix->
+					rows [( (drop*)( (*current)->data))->position_y].
+					cells[( (drop*)( (*current)->data))->position_x] =
+			      		( (drop*)( (*current)->data))->value;
+			} 
+			printf("Entering five\n");
+			if (( (drop*)( (*current)->data) )->position_y >=	
+		    	   ( (drop*)( (*current)->data) )->length){
+			   printf("Five cont\n");
+			   printf("Row number: %d\nCell number: %d\n, Value: %c\n",
+				   ((drop*)((*current)->data))->position_y,
+				   ((drop*)((*current)->data))->position_x,
+				   ((drop*)((*current)->data))->value);
+			   _matrix->
+                        	rows [( (drop*)( (*current)->data))->position_y -
+			      	( (drop*)( (*current)->data))->length].
+                        	cells[( (drop*)( (*current)->data))->position_x] = ' ';
+			}
+		
+		}
+		*current = *intermediate;
+	}
+
+	_matrix->
+		rows[terminal_dimensions->ws_row-1].
+		cells[terminal_dimensions->ws_col-1] = '\0';	
+
+        for (i=0; i<terminal_dimensions->ws_row;i++){
+		printf("%s", _matrix->rows[i].cells);
+        }
+	fflush(stdout);
+        return;
+}
+

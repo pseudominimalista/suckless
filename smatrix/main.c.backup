@@ -1,0 +1,137 @@
+#include "main.h"
+
+//typedef llc
+
+typedef struct llc {
+	struct llc *prv;
+	struct llc *nxt;
+	int pox;
+	int poy;
+	char val;
+} llc;
+
+
+typedef struct configuration {
+	int ngp;
+	int nrd;
+
+} configuration;
+void cycle(struct winsize *size, struct llc **cur, struct configuration cfg);
+void _print(struct llc* rot);
+void render(struct llc* rot, struct winsize size);
+
+int main(){
+	//printf("Starting smatrix now\n");
+	
+	struct configuration cfg;
+	struct llc *cur = malloc(sizeof(struct llc));
+	struct llc *rot;
+	//printf("Initializing variables\n");
+	cur->prv = NULL;
+	cur->nxt = NULL;
+	cur->val = 'A';
+	cur->pox = -1;
+	cur->poy = -1;
+	//printf("Loading configuration\n");
+
+	cfg.ngp = 1;
+	cfg.nrd = 1000;
+
+	struct winsize size;
+
+	rot = cur;
+
+	while (true){
+		//printf("Starting cycle, cur = %p\n", cur);
+		cycle(&size, &cur, cfg);
+		//render(rot, 
+
+		//cycle(size, cur->nxt, cfg);
+		//_print(rot);
+		//_print(rot);
+	}
+
+	return 0;
+}
+
+void render(struct llc* rot, struct winsize size){
+	//char frm[cfg.][]
+}
+
+void _print(struct llc *rot){
+	int i=0;
+	struct llc *inc;
+
+	inc = rot;
+
+	while (true){
+		//printf("Cell number %d. Value: %c\nX: %d, Y: %d\n",
+		//	i++, inc->val, inc->pox, inc->poy);
+		printf("%c ", inc->val);
+		if (inc->nxt == NULL){
+			printf("\n");
+			return;
+		} else {
+			inc = inc->nxt;
+		}
+	}
+
+}
+
+void cycle(struct winsize *size, struct llc **cur, struct configuration cfg){
+
+	int i, j;
+	srand(time(NULL));
+	i=0;
+
+	/*
+	 * Thankx to qknight for this one
+	 * https://stackoverflow.com/questions/1811955/ncurses-terminal-size
+	 */
+	
+
+	if (ioctl(0, TIOCGWINSZ, (char *) &size) < 0 ){
+		printf("No\n");
+	} else {
+		//printf("%d rows, %d columns\n", size.ws_row, size.ws_col);
+	}
+
+
+
+
+	for(i=0;i<size->ws_col;i++){
+		j = rand();
+		//printf("%d\n", j % 10);
+		if (cfg.ngp > ( j % 10) ){
+			struct llc *nxt = malloc(sizeof(struct llc));
+			//	Create cell value
+			//printf("Here\n");
+			nxt->nxt = NULL;
+			nxt->prv = NULL;
+			nxt->pox = i;
+			nxt->poy = 0;
+			nxt->val = 33 + ( j % ( 126-33 ) );
+
+	
+			//printf("Creating new cell with pox %d and val %c\n", nxt->pox, nxt->val);
+			//printf("Appending new cell to current one\n");
+			(*cur)->nxt = nxt;
+			nxt->prv = *cur;
+			(*cur) = nxt;
+			//nxt->prv = cur;
+
+
+
+		}
+
+		//Chance to spawn letters
+
+	}
+
+
+
+	usleep(1000 * cfg.nrd);
+
+
+}
+
