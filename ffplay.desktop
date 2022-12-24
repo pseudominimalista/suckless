@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=ffplay
+Exec=ffplay
+Terminal=false
+Type=Application
+Categories=Video

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=sxiv
+Exec=sxiv
+Terminal=false
+Type=Application
+Categories=Graphics

@@ -37,10 +37,8 @@ cp .wp ~/
 doas cp .web /usr/local/bin/web
 doas cp .todo /usr/local/bin/todo
 doas cp .dfm /usr/local/bin/dfm
-doas cp dwm.desktop /usr/share/xsessions 
+doas cp sxiv.desktop /usr/share/applications
+doas cp ffplay.desktop /usr/share/applications
 doas cp zathura.desktop /usr/share/applications
-#doas cp lightdm.conf /etc/lightdm/ 
+doas cp dwm.desktop /usr/share/xsessions
 chmod +x ~/.dwm/autostart.sh
-
-# Reiniciar o computador
-doas reboot
