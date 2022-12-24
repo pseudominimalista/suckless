@@ -34,6 +34,7 @@ cp -r .surf/ ~/
 cp .autostart.sh ~/.dwm/autostart.sh
 cp .Xresources ~/
 cp .wp ~/
+doas cp .web /usr/local/bin
 doas cp .todo /usr/local/bin/todo
 doas cp .dfm /usr/local/bin/dfm
 doas cp dwm.desktop /usr/share/xsessions 

@@ -2156,7 +2156,7 @@ main(int argc, char *argv[])
 #ifdef HOMEPAGE
 		arg.v = HOMEPAGE;
 #else
-		arg.v = "https://search.brave.com/";
+		arg.v = "https://html.duckduckgo.com/";
 #endif
 
 	setup();
