@@ -5,7 +5,7 @@ doas apk add lightdm bash gnupg pass git make gcc g++ libx11-dev libxft-dev \
 libxinerama-dev libjpeg-turbo-dev libpng-dev giflib-dev libexif-dev imlib2-dev \
 libxrandr-dev linux-headers argp-standalone ncurses dbus-x11 xdg-utils xclip dunst \
 gcr-dev webkit2gtk-dev xprop alsa-utils vim udisks2 libgit2-dev xbacklight \
-xset xsetroot setxkbmap zathura zathura-pdf-mupdf &&
+xset xsetroot setxkbmap dunst zathura zathura-pdf-mupdf &&
 
 # Habilitando LightDM
 doas rc-update add lightdm
@@ -26,8 +26,7 @@ doas make clean install --directory=surf/		;
 
 # Copia de arquivos
 mkdir ~/.dwm 
-mkdir ~/.config
-cp -r .config/* ~/.config
+cp -r .config/ ~/
 cp .autostart.sh ~/.dwm/autostart.sh
 cp .Xresources ~/
 doas cp .todo /usr/local/bin/todo
