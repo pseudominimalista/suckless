@@ -4,16 +4,13 @@
 doas setup-xorg-base
 
 # Instalação de dependências e programas
-doas apk add lightdm bash gnupg pass git make gcc g++ libx11-dev libxft-dev \
+doas apk add bash gnupg pass git make gcc g++ libx11-dev libxft-dev \
 libxinerama-dev libjpeg-turbo-dev libpng-dev giflib-dev libexif-dev imlib2-dev \
 libxrandr-dev linux-headers argp-standalone ncurses dbus-x11 xdg-utils xclip dunst \
 gcr-dev webkit2gtk-dev xprop alsa-utils vim udisks2 libgit2-dev xbacklight \
 xset xsetroot setxkbmap dunst zathura zathura-pdf-mupdf ffmpeg &&
 
-# Habilitando LightDM
-doas rc-update add lightdm
-
-# Compilar programas (Ainda não tá pronto)
+# Compilar programas 
 doas make clean install --directory=dmenu/		;
 doas make clean install --directory=dwm/		;
 doas make clean install --directory=dwmblocks/	;
@@ -40,7 +37,7 @@ doas cp .todo /usr/local/bin/todo
 doas cp .dfm /usr/local/bin/dfm
 doas cp dwm.desktop /usr/share/xsessions 
 doas cp zathura.desktop /usr/share/applications
-doas cp lightdm.conf /etc/lightdm/ 
+#doas cp lightdm.conf /etc/lightdm/ 
 chmod +x ~/.dwm/autostart.sh
 
 # Reiniciar o computador
