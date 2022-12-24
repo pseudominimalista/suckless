@@ -20,7 +20,6 @@ doas make clean install --directory=sent/		;
 doas make clean install --directory=st/			;
 doas make clean install --directory=bgs/		;
 doas make clean install --directory=farbfeld/	;
-doas make clean install --directory=smatrix/	;
 doas make clean install --directory=stagit      ;
 doas make clean install --directory=sxiv/		;
 doas make clean install --directory=slock/		;
