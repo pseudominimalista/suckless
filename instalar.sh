@@ -27,6 +27,7 @@ doas make clean install --directory=surf/		;
 # Copia de arquivos
 mkdir ~/.dwm 
 cp -r .config/ ~/
+cp -r .surf/ ~/
 cp .autostart.sh ~/.dwm/autostart.sh
 cp .Xresources ~/
 doas cp .todo /usr/local/bin/todo
