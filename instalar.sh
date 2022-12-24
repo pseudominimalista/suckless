@@ -1,14 +1,14 @@
 #!/bin/sh
 
+# Configurando xorg
+doas setup-xorg-base
+
 # Instalação de dependências e programas
 doas apk add lightdm bash gnupg pass git make gcc g++ libx11-dev libxft-dev \
 libxinerama-dev libjpeg-turbo-dev libpng-dev giflib-dev libexif-dev imlib2-dev \
 libxrandr-dev linux-headers argp-standalone ncurses dbus-x11 xdg-utils xclip dunst \
 gcr-dev webkit2gtk-dev xprop alsa-utils vim udisks2 libgit2-dev xbacklight \
 xset xsetroot setxkbmap dunst zathura zathura-pdf-mupdf ffmpeg &&
-
-# Configurando xorg
-doas setup-xorg-base
 
 # Habilitando LightDM
 doas rc-update add lightdm
