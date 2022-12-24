@@ -1,7 +1,9 @@
 #!/bin/sh
 
-# Configurando xorg
+# Configurando sessão 
 doas setup-xorg-base
+doas setup-desktop xfce
+doas apk del -r xfce4 firefox 
 
 # Instalação de dependências e programas
 doas apk add bash gnupg pass git make gcc g++ libx11-dev libxft-dev \
