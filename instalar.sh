@@ -37,8 +37,8 @@ cp .wp ~/
 doas cp .web /usr/local/bin/web
 doas cp .todo /usr/local/bin/todo
 doas cp .dfm /usr/local/bin/dfm
-doas cp sxiv.desktop /usr/share/applications
-doas cp ffplay.desktop /usr/share/applications
-doas cp zathura.desktop /usr/share/applications
-doas cp dwm.desktop /usr/share/xsessions
+doas cp .desktop/sxiv.desktop /usr/share/applications
+doas cp .desktop/ffplay.desktop /usr/share/applications
+doas cp .desktop/zathura.desktop /usr/share/applications
+doas cp .desktop/dwm.desktop /usr/share/xsessions
 chmod +x ~/.dwm/autostart.sh
