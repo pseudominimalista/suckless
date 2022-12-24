@@ -7,6 +7,9 @@ libxrandr-dev linux-headers argp-standalone ncurses dbus-x11 xdg-utils xclip dun
 gcr-dev webkit2gtk-dev xprop alsa-utils vim udisks2 libgit2-dev xbacklight \
 xset xsetroot setxkbmap dunst zathura zathura-pdf-mupdf &&
 
+# Configurando xorg
+doas setup-xorg-base
+
 # Habilitando LightDM
 doas rc-update add lightdm
 
