@@ -24,7 +24,7 @@ struct Monitor {
 };
 
 static int sx, sy, sw, sh;		/* screen geometry */
-static unsigned int mode = ModeScale;	/* image mode */
+static unsigned int mode = ModeZoom;	/* image mode */
 static Bool rotate = True;
 static Bool running = False;
 static Display *dpy;
