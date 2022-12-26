@@ -4,6 +4,7 @@
 doas setup-xorg-base
 doas apk add lxdm
 doas rc-update add lxdm boot
+doas cp .lxdm.conf /etc/lxdm/lxdm.conf
 
 # Instalação de dependências e programas
 doas apk add bash gnupg pass git make gcc g++ libx11-dev libxft-dev \
