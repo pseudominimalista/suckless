@@ -25,6 +25,6 @@ static const char worddelimiters[] = " ";
 static const unsigned int border_width = 0;
 
 /* Centralizar o dmenu */
-static int centered = 0;
+static int centered = 1;
 static int min_width = 500;
 
