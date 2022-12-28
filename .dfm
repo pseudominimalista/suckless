@@ -22,7 +22,7 @@ main() {
 }
 
 prompt_base() {
-	[ -z "$length" ] && length=10
+	[ -z "$length" ] && length=15
 
 	if [ "$case_sensitivity" = sensitive ]; then
 		backtrack() { sed 's|\(.*/'$sel'[^/]*\).*|\1|'; }
