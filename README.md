@@ -1,8 +1,8 @@
 ### Sobre  
 Esse repositório se trata de uma coletânea completa de todas as  
 ferramentas suckless que utilizo. O que estou tentando  
-é uma espécie de "Desktop Enviroment" utilizando essa ferramentas  
-e outras que eu encontrar também.  
+fazer é uma espécie de "Desktop Enviroment"   
+utilizando essa ferramentas e outras que eu encontrar também.  
 
 A paleta de cores utilizada é a [Catppuccin](https://github.com/catppuccin/catppuccin), com cores mais monocromáticas.
 
