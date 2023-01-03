@@ -52,10 +52,11 @@ doas make clean install --directory=src/quark/			;
 
 # Cópia de arquivos
 
+mkdir ~/.dwm
+cp .dwm/autostart.sh
 cp .profile ~/
 cp .Xresources ~/
 cp .wp ~/
-cp -r .dwm/ ~/
 cp -r .config/ ~/
 cp -r .surf/ ~/
 doas cp .repositories /etc/apk/repositories
