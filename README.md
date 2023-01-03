@@ -14,15 +14,16 @@ Caso você queira utilizá-lo, terá de adapta-lo à sua distribuição de prefe
 
 #### DWM  
 As teclas de atalho do dwm só as teclas de atalho padrão, com a  
-adição de 7 novas:
+adição de 8 novas:
 
 - `MOD + w` = Executa o script `web`  
 - `MOD + e` = Executa o script `dfm`  
 - `MOD + s` = Executa o script `passmenu`  
 - `MOD + d` = Executa o script `todo`  
-- `PrtSc` 	= Executa o script `screenshot`  
 - `MOD + a` = Executa o `alsamixer`  
 - `MOD + c` = Executa o `cmus`  
+- `PrtSc` 	= Executa o script `screenshot`  
+- `MOD + PrtSc` = Executa o script `rec`  
 
 
 #### ST  
