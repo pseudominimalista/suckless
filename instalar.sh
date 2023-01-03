@@ -63,7 +63,7 @@ doas cp .repositories /etc/apk/repositories
 doas cp .desktop/* /usr/share/applications 
 doas cp .scripts/* /usr/local/bin/
 doas cp -r .bin /usr/local/bin/
-doas cp -r .cmus /usr/share/cmus
+doas cp -r .cmus/* /usr/share/cmus
 doas chmod +x /usr/local/bin/*
 
 # Reiniciar o computador
