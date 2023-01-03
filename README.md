@@ -27,10 +27,7 @@ adição de 8 novas:
 
 
 #### ST  
-As teclas de atalho do st só as teclas de atalho padrão, com a  
-alteração de 2:  
 
-- `Alt + c` = Cola o conteúdo da clipboard  
 - `Alt + v` = Copia a selação para a clipboard  
 
 #### SURF  
