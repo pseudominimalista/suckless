@@ -14,7 +14,7 @@ Caso você queira utilizá-lo, terá de adapta-lo à sua distribuição de prefe
 
 #### DWM  
 As teclas de atalho do dwm só as teclas de atalho padrão, com a  
-adição de 8 novas:
+adição de 9 novas:
 
 - `MOD + w` = Executa o script `web`  
 - `MOD + e` = Executa o script `dfm`  
@@ -24,7 +24,7 @@ adição de 8 novas:
 - `MOD + c` = Executa o `cmus`  
 - `PrtSc` 	= Executa o script `screenshot`  
 - `MOD + PrtSc` = Executa o script `rec`  
-
+- `MOD + Ctrl + l` = bloqueia a tela  
 
 #### ST  
 

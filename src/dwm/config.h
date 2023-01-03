@@ -81,7 +81,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Print,  spawn,          {.v = rec } },
 	{ MODKEY,		        		XK_a,      spawn,          {.v = alsa } },
 	{ MODKEY,		        		XK_c,      spawn,          {.v = cmus } },
-	{ MODKEY,           			XK_l,      spawn,          {.v = slock } },
+	{ MODKEY|ControlMask,           XK_l,      spawn,          {.v = slock } },
 	
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
