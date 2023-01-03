@@ -31,24 +31,24 @@ doas rc-update add dbus
 
 # Compilar programas
 
-doas make clean install --directory=dwm/			;
-doas make clean install --directory=dmenu/			;
-doas make clean install --directory=slstatus/		;
-doas make clean install --directory=st/				;
-doas make clean install --directory=scroll/			;
-doas make clean install --directory=slock/			;
-doas make clean install --directory=bgs/			;
-doas make clean install --directory=surf/			;		
-doas make clean install --directory=tabbed/			;
-doas make clean install --directory=farbfeld/		;
-doas make clean install --directory=xscreenshot/	;
-doas make clean install --directory=lel/			;
-doas make clean install --directory=sxiv/			;
-doas make clean install --directory=sent/			;
-doas make clean install --directory=catpoint/		;
-doas make clean install --directory=saait/			;
-doas make clean install --directory=stagit/			;
-doas make clean install --directory=quark/			;
+doas make clean install --directory=src/dwm/			;
+doas make clean install --directory=src/dmenu/			;
+doas make clean install --directory=src/slstatus/		;
+doas make clean install --directory=src/st/				;
+doas make clean install --directory=src/scroll/			;
+doas make clean install --directory=src/slock/			;
+doas make clean install --directory=src/bgs/			;
+doas make clean install --directory=src/surf/			;		
+doas make clean install --directory=src/tabbed/			;
+doas make clean install --directory=src/farbfeld/		;
+doas make clean install --directory=src/xscreenshot/	;
+doas make clean install --directory=src/lel/			;
+doas make clean install --directory=src/sxiv/			;
+doas make clean install --directory=src/sent/			;
+doas make clean install --directory=src/catpoint/		;
+doas make clean install --directory=src/saait/			;
+doas make clean install --directory=src/stagit/			;
+doas make clean install --directory=src/quark/			;
 
 # Cópia de arquivos
 
