@@ -63,7 +63,6 @@ doas cp .desktop/* /usr/share/applications
 doas cp .scripts/* /usr/local/bin/
 doas cp -r .bin /usr/local/bin/
 doas cp -r .cmus /usr/share/cmus
-doas cp -r xorg.conf.d /etc/X11
 doas chmod +x /usr/local/bin/*
 
 # Reiniciar o computador
