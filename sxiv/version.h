@@ -1,1 +1,1 @@
-#define VERSION "26"
+#define VERSION "v26-1-g2cac112"

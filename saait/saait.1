@@ -1,0 +1,196 @@
+.Dd February 16, 2020
+.Dt SAAIT 1
+.Os
+.Sh NAME
+.Nm saait
+.Nd the most boring static page generator
+.Sh SYNOPSIS
+.Nm
+.Op Fl c Ar configfile
+.Op Fl o Ar outputdir
+.Op Fl t Ar templatesdir
+.Ar pages...
+.Sh DESCRIPTION
+.Nm
+writes HTML pages to the output directory.
+.Pp
+The arguments
+.Ar pages
+are page config files, which are processed in the given order.
+.Pp
+The options are as follows:
+.Bl -tag -width Ds
+.It Fl c Ar configfile
+The global configuration file, the default is "config.cfg".
+Each page configuration file inherits variables from this file.
+These variables can be overwritten per page.
+.It Fl o Ar outputdir
+The output directory, the default is "output".
+.It Fl t Ar templatesdir
+The templates directory, the default is "templates".
+.El
+.Sh DIRECTORY AND FILE STRUCTURE
+A recommended directory structure for pages, although the names can be
+anything:
+.Bl -tag -width Ds -compact
+.It pages/001-page.cfg
+.It pages/001-page.html
+.It pages/002-page.cfg
+.It pages/002-page.html
+.El
+.Pp
+The directory and file structure for templates must be:
+.Bl -tag -width Ds -compact
+.It templates/<templatename>/header.ext
+.It templates/<templatename>/item.ext
+.It templates/<templatename>/footer.ext
+.El
+.Pp
+The following filename prefixes are detected for template blocks and processed
+in this order:
+.Bl -tag -width Ds
+.It Qo "header." Qc
+Header block.
+.It Qo "item." Qc
+Item block.
+.It Qo "footer." Qc
+Footer block.
+.El
+.Pp
+The files are saved as output/<templatename>, for example
+templates/atom.xml/* will become: output/atom.xml.
+If a template block file does not exist then it is treated as if it was
+empty.
+.Pp
+Template directories starting with a dot (".") are ignored.
+.Pp
+The "page" templatename is special and will be used per page.
+.Sh CONFIG FILE
+A config file has a simple key=value configuration syntax, for example:
+.Bd -literal
+# this is a comment line.
+filename = example.html
+title = Example page
+description = This is an example page
+created = 2009-04-12
+updated = 2009-04-14
+.Ed
+.Pp
+The following variable names are special with their respective defaults:
+.Bl -tag -width Ds
+.It contentfile
+Path to the input content filename, by default this is the path of
+the config file with the last extension replaced to ".html".
+.It filename
+The filename or relative file path for the output file for this page.
+By default the value is the basename of the
+.Va contentfile .
+The path of the written output file is the value of
+.Va filename
+appended to the
+.Ar outputdir
+path.
+.El
+.Pp
+A line starting with # is a comment and is ignored.
+.Pp
+TABs and spaces before and after a variable name are ignored.
+TABs and spaces before a value are ignored.
+.Sh TEMPLATES
+A template (block) is text.
+Variables are replaced with the values set in the config files.
+.Pp
+The possible operators for variables are:
+.Bl -tag -width Ds
+.It $
+Escapes a XML string, for example: < to the entity &lt;.
+.It #
+Literal raw string value.
+.It %
+Insert contents of file of the value of the variable.
+.El
+.Pp
+For example in a HTML item template:
+.Bd -literal
+<article>
+	<header>
+		<h1><a href="">${title}</a></h1>
+		<p>
+			<strong>Last modification on </strong>
+			<time datetime="${updated}">${updated}</time>
+		</p>
+	</header>
+	%{contentfile}
+</article>
+.Ed
+.Sh EXIT STATUS
+.Ex -std
+.Sh EXAMPLES
+A basic usage example:
+.Bl -enum
+.It
+Create a directory for a new site:
+.Bd -literal
+mkdir newsite
+.Ed
+.It
+Copy the example pages, templates, global config file and example
+stylesheets to a directory:
+.Bd -literal
+cp -r pages templates config.cfg style.css print.css newsite/
+.Ed
+.It
+Change the current directory to the created directory.
+.Bd -literal
+cd newsite/
+.Ed
+.It
+Change the values in the global config.cfg file.
+.It
+If you want to modify parts of the header, like the navigation menu items,
+you can change the following two template files:
+.Bl -item -compact
+.It
+templates/page/header.html
+.It
+templates/index.html/header.html
+.El
+.It
+Create any new pages in the pages directory.
+For each config file there has to be a corresponding HTML file.
+By default this HTML file has the path of the config file, but with the last
+extension (".cfg" in this case) replaced to ".html".
+.It
+Create an output directory:
+.Bd -literal
+mkdir -p output
+.Ed
+.It
+After any modifications the following commands can be used to generate the
+output and process the pages in descending order:
+.Bd -literal
+find pages -type f -name '*.cfg' -print0 | sort -zr | xargs -0 saait
+.Ed
+.It
+Copy the modified stylesheets to the output directory also:
+.Bd -literal
+cp style.css print.css output/
+.Ed
+.It
+Open output/index.html locally in your webbrowser to review the changes.
+.It
+To synchronize files, you can securely transfer them via SSH using rsync:
+.Bd -literal
+rsync -av output/ user@somehost:/var/www/htdocs/
+.Ed
+.El
+.Sh TRIVIA
+The most boring static page generator.
+.Pp
+Meaning of saai (dutch): boring, pronunciation of saait: site
+.Sh SEE ALSO
+.Xr find 1 ,
+.Xr sort 1 ,
+.Xr xargs 1
+.Sh AUTHORS
+.An Hiltjo Posthuma Aq Mt hiltjo@codemadness.org

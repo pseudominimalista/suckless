@@ -1,6 +1,6 @@
 [global]
-frame_color = "#1E1E2E"
-separator_color= frame
+frame_color = "#6C7086"
+separator_color = frame
 
 [urgent-low]
 background = "1E1E2E"
@@ -13,6 +13,4 @@ foreground = "#CDD6F4"
 [urgent-critical]
 background = "#1E1E2E"
 foreground = "#CDD6F4"
-frame_color = "#FAB387"
-
-
+frame_color = "#F38BA8"

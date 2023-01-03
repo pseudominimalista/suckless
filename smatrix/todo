@@ -1,1 +1,0 @@
-Linking drops, framebuffer, matrix, etc all work. Need to implement random values for position and "value". Must implement advance, drop deletion, rate limiting, etc.

@@ -1,2 +1,7 @@
 #!/bin/sh
-dmenu_path | dmenu -l 15 "$@" | ${SHELL:-"/bin/sh"} &
+# Versão centralizada
+#
+dmenu_path | dmenu -c -i -l 15 "$@" | ${SHELL:-"/bin/sh"} &
+#
+# Versão normal
+# dmenu_path | dmenu "$@" | ${SHELL:-"/bin/sh"} &

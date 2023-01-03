@@ -1,0 +1,8 @@
+bin
+output/*.css
+output/*.xml
+output/*.html
+output/urllist.txt
+saait
+*.o
+*.core

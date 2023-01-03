@@ -1,0 +1,23 @@
+#lxdm {
+	background-image: url("wave.svg");
+	background-repeat: round;
+}
+
+#bottom_pane {
+	background-color: rgba(0,0,0,0.24);
+}
+
+#time {
+	font: Sans 12;
+	color: #cdd6f4;
+}
+
+#prompt {
+	font: Sans 14;
+	color: #cdd6f4;
+}
+
+#bottom_pane GtkLabel {
+	font: Sans 12;
+	color: #9E9D9B;
+}

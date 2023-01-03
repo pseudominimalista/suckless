@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# xscreenshot
+#
+#xscreenshot > ~/scr.ff
+#ff2png < ~/scr.ff > $HOME/Pictures/scr.png
+#rm ~/scr.ff
+
+# shotgun
+#
+shotgun -g $(hacksaw -c \#cdd6f4)
+mv ~/*.png ~/Pictures/

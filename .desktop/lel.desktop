@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=lel
+Exec=lel-open
+Terminal=true
+Type=Application
+Categories=Graphics

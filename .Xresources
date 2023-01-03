@@ -1,7 +1,3 @@
-*scrollBar: false
-XTerm*allowBoldFonts: false
-XTerm*selectToClipboard: true
-
 *background: #1E1E2E
 *foreground: #CDD6F4
 
@@ -36,4 +32,3 @@ XTerm*selectToClipboard: true
 ! white
 *color7: #BAC2DE
 *color15: #A6ADC8
-

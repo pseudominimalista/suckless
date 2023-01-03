@@ -1,0 +1,4 @@
+#!/bin/sh
+xscreenshot > ~/scr.ff
+ff2png < ~/scr.ff > ~/scr.png
+rm ~/scr.ff

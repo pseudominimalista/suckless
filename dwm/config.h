@@ -61,9 +61,26 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_bg, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *dfm[] = { "dfm", NULL };
+static const char *todo[] = { "todo", NULL };
+static const char *web[] = { "web", NULL };
+static const char *pass[] = { "passmenu", NULL };
+static const char *scr[] = { "screenshot", NULL };
+static const char *alsa[] = { "st", "alsamixer" };
+static const char *cmus[] = { "st", "cmus" };
+static const char *slock[] = { "slock", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
+	{ MODKEY,                       XK_e,      spawn,          {.v = dfm } },
+	{ MODKEY,             			XK_d,      spawn,          {.v = todo } },
+	{ MODKEY,                       XK_w,      spawn,          {.v = web } },
+	{ MODKEY,             			XK_s,      spawn,          {.v = pass } },
+	{ 0,                       		XK_Print,     spawn,          {.v = scr } },
+	{ MODKEY,		        		XK_a,      spawn,          {.v = alsa } },
+	{ MODKEY,		        		XK_c,      spawn,          {.v = cmus } },
+	{ MODKEY,           			XK_l,      spawn,          {.v = slock } },
+	
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
@@ -107,7 +124,7 @@ static const Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+	{ ClkStatusText,        0,              Button1,        spawn,          {.v = dmenucmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },

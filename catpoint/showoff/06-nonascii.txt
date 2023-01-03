@@ -1,0 +1,17 @@
+
+  Character support test
+  ======================
+
+  Places around the world:
+
+  o  Champs-Élysées
+
+  o  Θεσσαλονίκη
+
+  o  秋葉原電気街
+
+  o  Санкт-Петербург
+
+  o  上海市
+
+  o  القاهرة

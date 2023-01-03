@@ -21,10 +21,9 @@ static unsigned int lines      = 0;
  */
 static const char worddelimiters[] = " ";
 
-/* Tamanho da borda */
-static const unsigned int border_width = 0;
+/* Bordas ao redor do dmenu */
+static const unsigned int border_width = 2;
 
-/* Centralizar o dmenu */
-static int centered = 1;
+/* Centralizar dmenu  */
+static int centered = 0;
 static int min_width = 500;
-

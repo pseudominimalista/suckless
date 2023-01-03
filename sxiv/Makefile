@@ -10,10 +10,10 @@ MANPREFIX = $(PREFIX)/share/man
 AUTORELOAD = inotify
 
 # enable features requiring giflib (-lgif)
-HAVE_GIFLIB = 1
+HAVE_GIFLIB = 0
 
 # enable features requiring libexif (-lexif)
-HAVE_LIBEXIF = 1
+HAVE_LIBEXIF = 0
 
 cflags = -std=c99 -Wall -pedantic $(CFLAGS)
 cppflags = -I. $(CPPFLAGS) -D_XOPEN_SOURCE=700 \

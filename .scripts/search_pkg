@@ -1,0 +1,2 @@
+#!/bin/sh
+apk search | dmenu -c -i -l 15
