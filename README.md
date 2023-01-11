@@ -28,7 +28,8 @@ adição de 9 novas:
 
 #### ST  
 
-- `Alt + v` = Copia a selação para a clipboard  
+- `Alt + c` = Copia a seleção para a clipboard
+- `Alt + v` = Cola a seleção para a clipboard  
 
 #### SURF  
 
